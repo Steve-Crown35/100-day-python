@@ -1,4 +1,4 @@
-print("2000 is a great number")
+print("3000 is a great number")
 
 calculation_to_units = 24
 name_of_unit = "hours"
