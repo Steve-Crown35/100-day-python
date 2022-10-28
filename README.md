@@ -1,7 +1,7 @@
 # 100-day-python
 This is for python course on Udemy
 
-#Pizza Delivery App: the question is as follows:
+#Build a Pizza Delivery App: the question is as follows:
 Instructions
 Congratulations, you've got a job at Python Pizza. Your first job is to build an automatic pizza order program.
 
