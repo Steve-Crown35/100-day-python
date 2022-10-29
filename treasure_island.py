@@ -47,9 +47,9 @@ if first_direction == "east":
             pick_a_color = input("choose a color. Red, Blue or Green\n")
             pick_a_color = pick_a_color.lower()
             if pick_a_color == "green":
-                print("Big Congratulations. The treasure is yours. You won.")
+                print("Big Congratulations. You found the treasure. You won.")
             else:
-                print("You lost. Please play again.")
+                print("It's a room full of beast. Game over! Please play again.")
         else:
             print("You entered the wrong expression. Game over!")
     else:
@@ -74,9 +74,9 @@ elif first_direction == "south":
                 pick_a_color = input("choose a color. Red, Blue or Green\n")
                 pick_a_color = pick_a_color.lower()
                 if pick_a_color == "green":
-                    print("Big Congratulations. The treasure is yours. You won.")
-                else:
-                    print("You lost. Please play again.")
+                    print("Big Congratulations. You found the treasure. You won.")
+            else:
+                print("It's a room full of beast. Game over! Please play again.")
         else:
             print("You entered the wrong expression. Game over!")
     else:
