@@ -49,7 +49,7 @@ elif pick_number == 1:
     computer_choice = art[random_index]
     print(computer_choice)
     if pick_number == 1 and random_index == 0:
-        print("Paper wins agaainst rock. You won! 👏")
+        print("Paper wins against rock. You won! 👏")
     elif pick_number == 1 and random_index == 2:
         print("Paper loses against scissors. You Lost! 😭")
     else: 
