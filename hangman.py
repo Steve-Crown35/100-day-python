@@ -1,5 +1,4 @@
 import random
-from re import S
 from hangman_art import hangman, art
 from Hangman_words import words
 hangman_design = art
@@ -12,7 +11,7 @@ random_number = random.randint(0, len(word_list)-1)
 random_word = word_list[random_number]
 life = 6
 letter = []
-print(random_word)
+#print(random_word)
 for i in random_word:
     underscore.append("_")
 place_holder = underscore
@@ -38,6 +37,11 @@ if "_" not in place_holder:
     print("Congratulations! You won.") 
 else:
     print(f"You lose. The word is {random_word}")     
+    
+
+
+
+
     
 
 
