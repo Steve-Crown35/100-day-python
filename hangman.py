@@ -34,7 +34,7 @@ while "_" in place_holder and life != 0:
         print(f"You guessed the letter {guess_letter}. {guess_letter} is not in the word. You lose a life")
         print(stage)  
 if "_" not in place_holder:
-    print("Congratulations! You won.") 
+    print(f"Congratulations! You won with {life} lives left.") 
 else:
     print(f"You lose. The word is {random_word}")     
     
