@@ -9,5 +9,5 @@ def prime_number_checker(number):
         print("it's not a prime number")
 
 
-n = int(input("Check if the number is prime\n"))
+n = int(input("Enter the number to check if it's a prime number\n"))
 prime_number_checker(number = n)
