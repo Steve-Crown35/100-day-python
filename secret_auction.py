@@ -23,8 +23,10 @@ def highest_bidder():
     for bid_amount in bids:
         if bid_amount > max_bid:
             max_bid = bid_amount
-    print(max_bid)
-    print(bids)
+    for name in all_bidders:
+        if all_bidders[name] == max_bid:
+            print(f"The winner is {name} with a bid of ${max_bid}")
+
 
 highest_bidder()
 print(all_bidders)
