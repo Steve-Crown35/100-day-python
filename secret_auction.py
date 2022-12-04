@@ -17,7 +17,7 @@ while next_bidder == "yes":
 
 def highest_bidder():
     bids = []
-    max_bid = -0.0000000000000999
+    max_bid = 0.0000000000000999
     for name in all_bidders:
         bids.append(all_bidders[name])
     for bid_amount in bids:
@@ -27,5 +27,4 @@ def highest_bidder():
     print(bids)
 
 highest_bidder()
-
 print(all_bidders)
