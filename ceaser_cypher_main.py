@@ -1,35 +1,30 @@
-from secret_auction_module import art
-import os
-print(art)
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        return True
+      else:
+        return False
+    else:
+      return True
+  else:
+    return False
 
-print("WELCOME TO SECRET AUCTION!")
-all_bidders = {}
-end_of_bidding = False
-while not end_of_bidding:
-    name = input("Enter your name\n")
-    bid = float(input("Enter your bid amount $"))
-    all_bidders[name] = bid
-    next_bidder = input("Is there any other bidder? yes or no\n").lower()
-    if next_bidder == "yes":
-        os.system('cls')
-    else: 
-        end_of_bidding =True
+def days_in_month(year, month):
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  
+  
+  if is_leap(year) and month == 2:
+      days = 29
+      return days
+  else:
+      days = month_days[month - 1]
+  return days
 
-def highest_bidder():
-    bids = []
-    max_bid = 0.0000000000000999
-    for name in all_bidders:
-        bids.append(all_bidders[name])
-    for bid_amount in bids:
-        if bid_amount > max_bid:
-            max_bid = bid_amount
-    for name in all_bidders:
-        if all_bidders[name] == max_bid:
-            print("The winner is {name} with a bid of ${max_bid}")
 
-highest_bidder()
-print(all_bidders)
-
-highest_bidder()
-
-print(all_bidders)
+  
+  
+#🚨 Do NOT change any of the code below 
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
