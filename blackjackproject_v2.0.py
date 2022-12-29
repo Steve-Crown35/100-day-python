@@ -48,6 +48,12 @@ if reply == 'y':
     print(logo)
     user_card()
     computers_card()
+    if users_sum == 21:
+        print("Congratulations! You won with a Blackjack.")
+    elif computers_sum == 21:
+        print("You lose! Opponent's got a Blackjack")
+    elif users_sum == 21 and computers_sum == 21:
+        print("It's a Draw!")
     response = input("Would you need more cards? Type 'y' for YES or 'n' for NO: ")
         
     if response == 'n':
@@ -56,12 +62,12 @@ if reply == 'y':
         else: 
             while computers_sum < 17: 
                 choose_card = random.choice(cards)
-                if choose_card == 'Ace' and users_sum > 10:
+                if choose_card == 'Ace' and computers_sum > 10:
                     card_value = 1
                 else:
                     card_value = card_dict[choose_card]
-                    computers_hand.append(card_value)
-                    computers_sum = sum(computers_hand)
+                computers_hand.append(card_value)
+                computers_sum = sum(computers_hand)
             if users_sum <= 21 and computers_sum <= 21:
                 if users_sum > computers_sum:
                     print(f"Your final hand is {user_hand}. Your total score is {users_sum}")
@@ -90,13 +96,13 @@ if reply == 'y':
             user_hand.append(card_value)
             user_total_score = sum(user_hand)
             print(f"Your cards : {user_hand}, current score: {user_total_score}")
-            choose_card = random.choice(cards)
+            '''choose_card = random.choice(cards)
             if choose_card == 'Ace' and computers_sum > 10:
                 card_value = 1
             else:
                 card_value = card_dict[choose_card]
             computers_hand.append(card_value)
-            computer_total_score = sum(computers_hand)
+            computer_total_score = sum(computers_hand)'''
             print(f"Computer's first card: {computers_hand[0]}")
             response = input("Would you need more cards? Type 'y' for YES or 'n' for NO: ")
             if response == 'y':
@@ -108,7 +114,7 @@ if reply == 'y':
         else:
             while computer_total_score < 17:
                 choose_card = random.choice(cards)
-                if choose_card == 'Ace' and users_sum > 10:
+                if choose_card == 'Ace' and computers_sum > 10:
                     card_value = 1
                 else:
                     card_value = card_dict[choose_card]
