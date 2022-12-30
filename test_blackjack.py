@@ -1,12 +1,12 @@
 from blackjack_art import logo
 import random
-import os
 cards = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'King', 'Queen']
 card_dict = {'Ace': 11, 'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8, 'Nine': 9, 'Ten': 10, 'Jack': 10, 'King':10, 'Queen': 10}
 #choose_card = random.choice(cards)
 #print(choose_card)
 #card_value = card_dict[choose_card]
 #print(card_value)
+import os
 def sum(list1):
     sum = 0
     for i in list1:
@@ -48,6 +48,8 @@ def blackjack():
     global user_hand 
     global computers_sum
     global computers_hand
+    
+    
     reply = input("Would you like to play the Blackjack game? Type 'y' for YES or 'n' for NO: ")
     if reply == 'y':
         print(logo)
@@ -144,12 +146,10 @@ def blackjack():
                     print("Congratulations. You won!")
         else:
             print("Incorrect response. Please play again and make sure to enter the correct response : 'y' or 'n' ")
-
-        
     else: 
         print("Okay, No Problem. Goodbye!")
-    answer = input("Would you like to play again? Type 'y' for YES and 'n' for NO: ")
-    if answer == 'y':
-        os.system('cls')
-        blackjack()
+    blackjack()
 blackjack()
+'''while input("Would you like to play the Blackjack game? Type 'y' for YES or 'n' for NO: ") == 'y':
+    os.system('cls')
+    blackjack()'''
