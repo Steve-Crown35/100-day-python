@@ -1,0 +1,60 @@
+from guess_number_logo import logo
+import random
+def guess_number():
+    numbers = []
+    attempts_dict = {'e': 10, 'h': 5} 
+    for i in range(1,101):
+        numbers.append(i)
+    print(logo)
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
+    difficulty_level = input("Choose a difficulty level. Type 'e' for EASY or 'h' for HARD: ")
+    if difficulty_level == 'e':
+        attempts = attempts_dict['e']
+        print(f"You have {attempts} attempts to guess the number")
+    elif difficulty_level == 'h':
+        attempts = attempts_dict['h']
+        print(f"You have {attempts} attempts to guess the number")
+    else:
+        print("please type either 'e' for EASY or 'h' for HARD to choose a difficulty level")
+    while difficulty_level != 'e' and difficulty_level != 'h':
+        difficulty_level = input("Choose a difficulty level. Type 'e' for EASY or 'h' for HARD: ")
+        if difficulty_level == 'e':
+            attempts = attempts_dict['e']
+            print(f'You have {attempts} attempts to guess the number')
+        elif difficulty_level == 'h':
+            attempts = attempts_dict['h']
+            print(f"You have {attempts} attempts to guess the number")
+    computers_guess = random.choice(numbers)
+    #print(computers_guess)
+    #print(attempts)
+    users_guess = int(input("Make a guess: "))
+    repeat = True
+    while attempts != 0 and repeat:
+        if users_guess < computers_guess:
+            attempts -= 1
+            attempts_left = attempts
+            print("Too low.")
+            print(f"You have {attempts_left} attempts remaining to guess the number.")
+            if attempts == 0:
+                repeat = False
+            else:
+                users_guess = int(input("Guess again: "))
+        elif users_guess > computers_guess:
+            attempts -= 1
+            attempts_left = attempts
+            print("Too high.")
+            print(f"You have {attempts_left} attempts remaining to guess the number.")
+            if attempts == 0:
+                repeat = False
+            else:
+                users_guess = int(input("Guess again: "))
+        elif users_guess == computers_guess:
+            print(f"You got it! The answer is {users_guess}.")
+            repeat = False
+    if attempts == 0:
+        print("You lose!")
+    response = input("Would you like to play again? Type 'y' for YES or 'n' for NO: ")
+    if response == 'y':
+        guess_number()
+guess_number()
