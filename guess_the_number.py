@@ -1,10 +1,10 @@
 from guess_number_logo import logo
-import random
+from random import randint
 def guess_number():
-    numbers = []
+    #numbers = []
     attempts_dict = {'e': 10, 'h': 5} 
-    for i in range(1,101):
-        numbers.append(i)
+    #for i in range(1,101):
+    #    numbers.append(i)
     print(logo)
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
@@ -25,7 +25,7 @@ def guess_number():
         elif difficulty_level == 'h':
             attempts = attempts_dict['h']
             print(f"You have {attempts} attempts to guess the number")
-    computers_guess = random.choice(numbers)
+    computers_guess = randint(1,100)
     #print(computers_guess)
     #print(attempts)
     users_guess = int(input("Make a guess: "))
@@ -53,7 +53,7 @@ def guess_number():
             print(f"You got it! The answer is {users_guess}.")
             repeat = False
     if attempts == 0:
-        print("You lose!")
+        print(f"You lose! The number is {computers_guess}.")
     response = input("Would you like to play again? Type 'y' for YES or 'n' for NO: ")
     if response == 'y':
         guess_number()
